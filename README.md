@@ -88,9 +88,6 @@ Love to code? Want to make StudyNotion even cooler? Your contributions are welco
 So, let's explore the world of StudyNotion together - where learning meets fun. Happy coding! 🚀
 
 
-## Screenshots 📸
-[Homepage Screenshot](https://imgur.com/a/rYEvyx7)
-
 ## Live Project Link 🌐
 
 [Live project link here!](https://study-notion-ed-tech-five.vercel.app/)
@@ -98,3 +95,7 @@ So, let's explore the world of StudyNotion together - where learning meets fun. 
 ## API Documentation 📘
 
 [API documentation link here!](https://documenter.getpostman.com/view/30301498/2s9YkrcfpL#ed95e6e0-58cb-4e0b-a3dd-d00f6dcc0110)
+
+## Screenshots 📸
+![Web capture_26-12-2023_02412_study-notion-ed-tech-five vercel app](https://github.com/shubhhhGT/StudyNotion_EdTech/assets/140509975/6cc9cb8b-e126-4ef3-9f83-bcafc4b14471)
+
