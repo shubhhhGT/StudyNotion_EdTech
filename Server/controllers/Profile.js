@@ -72,7 +72,7 @@ exports.updateProfile = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       success: false,
-      message: "Error occured while updating profile, please try again",
+      message: error.message,
     });
   }
 };
