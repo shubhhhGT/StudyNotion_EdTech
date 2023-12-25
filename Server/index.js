@@ -16,16 +16,34 @@ const cors = require("cors");
 const cartRoutes = require("./routes/cart");
 
 const PORT = process.env.PORT || 4000;
+// Allow requests from the specified Vercel domains
+const allowedOrigins = [
+  "https://study-notion-ed-tech-five.vercel.app",
+  "https://study-notion-ed-tech-git-main-shubhhhgts-projects.vercel.app",
+  "https://study-notion-ed-tech-1usgd05w5-shubhhhgts-projects.vercel.app",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Enable credentials in CORS
+};
 
 // middlewares
 app.use(cookieParser());
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://study-notion-ed-tech-five.vercel.app",
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
+// app.use(
+//   cors({
+//     origin: "https://study-notion-ed-tech-five.vercel.app",
+//     credentials: true,
+//   })
+// );
 app.use(
   fileUpload({
     useTempFiles: true,
