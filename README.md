@@ -4,7 +4,7 @@ Hey there! Welcome to StudyNotion, a cool project I've been working on to make l
 
 ## Quick Intro 🌟
 
-StudyNotion is my way of making learning interactive and exciting. It's not just for students but also for awesome instructors to share their knowledge with learners around the world.
+StudyNotion is my way of making learning interactive and exciting. It's not just for students but also for awesome instructors to share their knowledge with learners around the world. With features like flawless responsiveness across all screen sizes, a meticulously documented backend, progress tracking for enrolled courses, and secure payments through Razorpay, StudyNotion is here to make your learning experience better than ever!
 
 ## What's Inside? 🧐
 
