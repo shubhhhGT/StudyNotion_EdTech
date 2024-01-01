@@ -237,6 +237,57 @@ exports.login = async (req, res) => {
   }
 };
 
+// Google login
+exports.loginWithGoogle = async (profile) => {
+  try {
+    // Check if it is a Google login
+    if (profile) {
+      // If the user object exists in the profile, it means it's a Google login
+
+      // Check if the user is already in DB
+      const existingUser = await User.findOne({ googleId: profile.id });
+      if (existingUser) {
+        // populate additional details
+        await existingUser.populate("additionalDetails");
+        // User is already in Db, So just log in
+        return {
+          user: existingUser,
+          isNewUser: false,
+        };
+      } else {
+        // If user is not in DB, create the user
+        const profileDetails = await Profile.create({
+          gender: null,
+          dateOfBirth: null,
+          about: null,
+          contactNumber: null,
+        });
+
+        const newUser = new User({
+          googleId: profile.id,
+          firstName: profile.name.givenName,
+          lastName: profile.name.familyName,
+          email: profile.emails[0].value,
+          password: undefined,
+          accountType: "Student",
+          additionalDetails: profileDetails._id,
+          image: profile.photos[0].value,
+        });
+
+        await newUser.save();
+
+        return {
+          user: newUser,
+          isNewUser: true,
+        };
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error occurred while logging in!");
+  }
+};
+
 // Change Password
 exports.changePassword = async (req, res) => {
   try {
