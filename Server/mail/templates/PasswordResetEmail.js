@@ -1,6 +1,6 @@
 exports.passwordResetTemplate = (url) => {
-    console.log("Generating password reset email with URL:", url);
-    return `<!DOCTYPE html>
+  console.log("Generating password reset email with URL:", url);
+  return `<!DOCTYPE html>
     <html>
         
         <head>
@@ -67,7 +67,7 @@ exports.passwordResetTemplate = (url) => {
         
         <body>
             <div class="container">
-                <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
+                <a href="https://study-notion-ed-tech-five.vercel.app"><img class="logo"
                         src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
                 <div class="message">Password Reset Email</div>
                 <div class="body">
@@ -76,7 +76,7 @@ exports.passwordResetTemplate = (url) => {
                     <h2 class="highlight">${url}</h2>
                 </div>
                 <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-                        href="mailto:info@studynotion.com">info@studynotion.com</a>. We are here to help!</div>
+                        href="mailto:studynotion007@.com">studynotion007@.com</a>. We are here to help!</div>
             </div>
         </body>
         
