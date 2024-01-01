@@ -21,7 +21,6 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
     },
     // contactNumber: {
     //     type: String,
@@ -67,6 +66,9 @@ const userSchema = new mongoose.Schema(
         ref: "CourseProgress",
       },
     ],
+    googleId: {
+      type: String,
+    },
     // active: {
     //     type: Boolean,
     //     required: true,
