@@ -45,6 +45,10 @@ const LoginForm = () => {
           dispatch(setToken(token));
           dispatch(setUser(JSON.parse(user)));
 
+          // Set the item in local storage
+          localStorage.setItem("token", JSON.stringify(token));
+          localStorage.setItem("user", JSON.stringify(user));
+
           // Remove the parameters from the URL
           window.history.replaceState(
             {},
