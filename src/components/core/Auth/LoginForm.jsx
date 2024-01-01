@@ -28,83 +28,52 @@ const LoginForm = () => {
     dispatch(login(formData.email, formData.password, navigate));
   };
 
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         // Wait for a short time before checking the URL
-  //         // This allows the server to redirect and include data in the URL
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Wait for a short time before checking the URL
+        // This allows the server to redirect and include data in the URL
 
-  //         // Parse the URL to extract data
-  //         const urlParams = new URLSearchParams(window.location.search);
-  //         const googleLogin = urlParams.get("googleLogin");
-  //         console.log(googleLogin);
-  //         const token = urlParams.get("token");
-  //         const user = urlParams.get("user");
+        // Parse the URL to extract data
+        const urlParams = new URLSearchParams(window.location.search);
+        const googleLogin = urlParams.get("googleLogin");
+        console.log(googleLogin);
+        const token = urlParams.get("token");
+        const user = urlParams.get("user");
 
-  //         if (token && user) {
-  //           dispatch(setToken(token));
-  //           dispatch(setUser(JSON.parse(user)));
-
-  //           // Set the item in local storage
-  //           localStorage.setItem("token", JSON.stringify(token));
-  //           localStorage.setItem("user", JSON.stringify(user));
-
-  //           // Remove the parameters from the URL
-  //           window.history.replaceState(
-  //             {},
-  //             document.title,
-  //             window.location.pathname
-  //           );
-
-  //           // Redirect to the user profile page
-  //           navigate("/dashboard/my-profile");
-  //         }
-  //       } catch (error) {
-  //         console.error("Error during Google login:", error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, [dispatch, navigate]);
-
-  //   const handleLoginWithGoogle = async () => {
-  //     try {
-  //       // Open a new window for Google authentication
-  //       window.open(
-  //         "https://studynotion-backend-h3qn.onrender.com/auth/google",
-  //         "_self"
-  //       );
-  //     } catch (error) {
-  //       console.error("Error during Google login:", error);
-  //     }
-  //   };
-
-  const handleLoginWithGoogle = async () => {
-    try {
-      // Open a new window for Google authentication
-      const newWindow = window.open(
-        "https://studynotion-backend-h3qn.onrender.com/auth/google",
-        "_self"
-      );
-
-      // Add an event listener to listen for messages from the popup window
-      window.addEventListener("message", (event) => {
-        if (event.origin === window.location.origin) {
-          // Extract user information from the event data
-          const { token, user } = event.data;
-
-          // Dispatch actions to set token and user in the Redux store
+        if (token && user) {
           dispatch(setToken(token));
-          dispatch(setUser(user));
+          dispatch(setUser(JSON.parse(user)));
 
           // Set the item in local storage
           localStorage.setItem("token", JSON.stringify(token));
           localStorage.setItem("user", JSON.stringify(user));
 
+          // Remove the parameters from the URL
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+          );
+
           // Redirect to the user profile page
           navigate("/dashboard/my-profile");
         }
-      });
+      } catch (error) {
+        console.error("Error during Google login:", error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch, navigate]);
+
+  const handleLoginWithGoogle = async () => {
+    try {
+      // Open a new window for Google authentication
+      window.open(
+        "https://studynotion-backend-h3qn.onrender.com/auth/google",
+        "_self"
+      );
     } catch (error) {
       console.error("Error during Google login:", error);
     }
