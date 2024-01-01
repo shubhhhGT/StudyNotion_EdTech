@@ -40,13 +40,10 @@ const LoginForm = () => {
         console.log(googleLogin);
         const token = urlParams.get("token");
         const user = urlParams.get("user");
-        console.log("token", token);
-        console.log("user", user);
 
         if (token && user) {
           dispatch(setToken(token));
           dispatch(setUser(JSON.parse(user)));
-          console.log("user json: ", JSON.parse(user));
 
           // Remove the parameters from the URL
           window.history.replaceState(
