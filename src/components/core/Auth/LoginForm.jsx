@@ -37,13 +37,13 @@ const LoginForm = () => {
         // Parse the URL to extract data
         const urlParams = new URLSearchParams(window.location.search);
         const googleLogin = urlParams.get("googleLogin");
-        console.log(googleLogin);
         const token = urlParams.get("token");
-        const user = urlParams.get("user");
+        var user = urlParams.get("user");
+        user = JSON.parse(user);
 
         if (token && user) {
           dispatch(setToken(token));
-          dispatch(setUser(JSON.parse(user)));
+          dispatch(setUser(user));
 
           // Set the item in local storage
           localStorage.setItem("token", JSON.stringify(token));
