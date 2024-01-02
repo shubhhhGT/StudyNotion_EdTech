@@ -46,6 +46,7 @@ Now, let's talk about the back-end - the brain behind everything. It's like the 
 - **Payment Integration:** Buy courses securely with Razorpay.
 - **Cloud-based Media Management:** All our images, videos, and documents are stored and managed by Cloudinary.
 - **Markdown Formatting:** Courses are stored in Markdown format for a cool display.
+- **Login with Google:** Users can now log in seamlessly using their Google accounts.
 
 ### Tools in Action 🛠️
 
