@@ -4,7 +4,7 @@ import bannerimage1 from "../assets/Images/aboutus1.webp";
 import bannerimage2 from "../assets/Images/aboutus2.webp";
 import bannerimage3 from "../assets/Images/aboutus3.webp";
 import Quote from "../components/core/AboutPage/Quote";
-import FoundingStory from "../assets/Images/FoundingStory.png";
+import FoundingStory from "../assets/Images/FoundingStory.webp";
 import Stats from "../components/core/AboutPage/Stats";
 import LearningGrid from "../components/core/AboutPage/LearningGrid";
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection";
