@@ -56,7 +56,9 @@ const ReviewSlider = () => {
                         ? review?.user?.image
                         : `https://api.dicebear.com/5.x/initials/svg?seed=${review?.user?.firstName} ${review?.user?.lastName}`
                     }
-                    alt={review?.user?.firstName}
+                    alt={
+                      review?.user?.firstName ? review?.user?.firstName : "user"
+                    }
                     className="h-9 w-9 object-cover rounded-full"
                   />
                   <div className="flex flex-col">
