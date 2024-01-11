@@ -8,7 +8,6 @@ import ProfileDropdown from "../components/core/Auth/ProfileDropdown";
 import { apiConnector } from "../services/apiconnector";
 import { categories } from "../services/apis";
 import { SlArrowDown } from "react-icons/sl";
-import Spinner from "./Spinner";
 import { AiOutlineMenu } from "react-icons/ai";
 import { HiOutlineHome, HiUserGroup } from "react-icons/hi";
 import { IoIosArrowBack, IoIosCall } from "react-icons/io";
@@ -60,17 +59,14 @@ const Navbar = () => {
     }
     // eslint-disable-next-line
   }, [user, token]);
-  // console.log("cart", cart);
-  // console.log(cart?.data?.data?.totalItems);
+
   // ends
 
   const fetchSublinks = async () => {
     setLoading(true);
     try {
       const result = await apiConnector("GET", categories.CATEGORIES_API);
-      // console.log("printing sublinks result:", result);
       setSubLinks(result.data.allCategories);
-      // console.log(result.data.allCategories);
     } catch (error) {
       console.log("could not fetch the category list");
     }
@@ -178,6 +174,7 @@ const Navbar = () => {
           {token !== null && <ProfileDropdown />}
           {/* Hamburger for small screens */}
           <button
+            name="Menu"
             className="mr-4 md:hidden"
             onClick={() => setIsNavbarCollapsed(!isNavbarCollapsed)}
           >
